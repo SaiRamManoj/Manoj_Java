@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Comparator;
 
 public class Movie {
@@ -47,7 +48,31 @@ public class Movie {
     public void setProfit(double profit) {
         this.profit = profit;
     }
+    
+    @Override
+    public String toString(){
+        return ""+this.yearReleased+" "+this.rating+" "+this.profit;
+    }
 
+    public static void main(String[] args) {
+        Movie[] mv = new Movie[3];
+        mv[0] = new Movie(2014, 4.5, 100000, 200000);
+        mv[1] = new Movie(2015, 4.7, 150000, 200000);
+        mv[2] = new Movie(2013, 4.5, 100000, 200000);
+
+        Arrays.sort(mv,new CompareByRatingAndProfit());
+
+        System.out.println("After sorting by Rating and profit : ");
+        for(int i =0;i<mv.length;i++)
+        System.out.println(mv[i].toString());
+
+        Arrays.sort(mv,new CompareByReleaseAndRating());
+
+        System.out.println("After sorting by Rating and profit : ");
+        for(int i =0;i<mv.length;i++)
+        System.out.println(mv[i].toString());
+
+    }   
 }
 
 class CompareByRatingAndProfit implements Comparator<Movie>{
