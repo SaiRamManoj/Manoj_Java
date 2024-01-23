@@ -1,3 +1,5 @@
+package Arrays;
+
 public class Largest_Smallest {
     public static void main(String[] args) {
         int small=10000,large=0;

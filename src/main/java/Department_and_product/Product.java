@@ -1,3 +1,5 @@
+package Department_and_product;
+
 public class Product {
     private double price;
 
