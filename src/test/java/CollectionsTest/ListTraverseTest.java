@@ -1,12 +1,14 @@
+package CollectionsTest;
+
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static Collections.RemoveLastElementArrayList.removeLastElement;
+import static Collections.TraverseArrayList.traverseList;
 
-public class RemoveLastElementTest {
-
+public class ListTraverseTest {
     @Test
     public void test1(){
         ArrayList<String> al = new ArrayList<>();
@@ -15,7 +17,7 @@ public class RemoveLastElementTest {
         al.add("Ram");
         al.add("manoj");
 
-        Assert.assertEquals("manoj",removeLastElement(al));
+        Assert.assertTrue(traverseList(al));
 
     }
     @Test
@@ -24,9 +26,9 @@ public class RemoveLastElementTest {
 
         al.add("ha");
         al.add("hahah");
-        al.add("chandram");
+        al.add("hehehe");
 
-        Assert.assertEquals("chandram",removeLastElement(al));
+        Assert.assertTrue(traverseList(al));
 
     }
 
@@ -38,7 +40,7 @@ public class RemoveLastElementTest {
         al.add(null);
         al.add("tatta daw");
 
-        Assert.assertEquals("tatta daw",removeLastElement(al));
+        Assert.assertTrue(traverseList(al));
 
     }
 }

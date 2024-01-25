@@ -11,10 +11,15 @@ public class ConvertToArray {
         al.add("manoj");
         al.add("pusala");
 
-        Object[] array =  al.toArray();
+        Object[] array =  convertToArray(al);
 
         for(int i=0;i<array.length;i++){
             System.out.println(array[i]);
         }
+
+    }
+
+    public static Object[] convertToArray(ArrayList<String> al){
+        return al.toArray();
     }
 }
