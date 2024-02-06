@@ -4,13 +4,35 @@ import LamdaFunctions.StringToIntegerConverter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static junit.framework.Assert.assertEquals;
+
 public class StringToIntegerConverterTest {
     StringToIntegerConverter st= new StringToIntegerConverter();
 
     @Test
-    public void test1(){
-        Assertions.assertEquals(23,st.convertAndPrint("23"));
-
-        Assertions.assertEquals(45.67,st.convertAndPrint(("45.67")));
+    public void testConvertAndPrint_ValidInput() {
+        StringToIntegerConverter converter = new StringToIntegerConverter();
+        assertEquals(23, converter.convertAndPrint("23"));
     }
+
+    @Test
+    public void testConvertAndPrint_InvalidInput() {
+        StringToIntegerConverter converter = new StringToIntegerConverter();
+        assertEquals(0, converter.convertAndPrint("45.67"));
+    }
+
+    @Test
+    public void testConvertAndPrint_NonNumericInput() {
+        StringToIntegerConverter converter = new StringToIntegerConverter();
+        assertEquals(0, converter.convertAndPrint("test"));
+    }
+
+    @Test
+    public void testConvertAndPrint_MixedInput() {
+        StringToIntegerConverter converter = new StringToIntegerConverter();
+        assertEquals(0, converter.convertAndPrint("123f"));
+    }
+
+
+
 }
