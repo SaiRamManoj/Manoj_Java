@@ -1,4 +1,4 @@
-package Arrays;
+package ArraysImplementation;
 
 public class Largest_Smallest {
     public static void main(String[] args) {
