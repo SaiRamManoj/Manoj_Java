@@ -8,8 +8,8 @@ public class Singleton {
     private Singleton() {}
 
     // Public static method to get the single instance of the class
-    public static Singleton getInstance() {
-        // If instance is not created, create it
+    public static synchronized Singleton getInstance() {
+        // Synchronize the creation of the instance to make it thread-safe
         if (instance == null) {
             instance = new Singleton();
         }
